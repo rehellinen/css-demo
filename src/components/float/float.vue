@@ -21,18 +21,18 @@
       p 去空格化
     p.note 这里实现了文字环绕效果
     div.text-around
-      img(src="../../assets/timg.jpg")
+      img(src="../../assets/demo.jpg")
       p 文字环绕效果，文字环绕效果，文字环绕效果，文字环绕效果
     p.note 图片设置了浮动，父元素高度塌陷
     .wrapper-bfc
       .img-float
-        img(src="../../assets/timg.jpg")
+        img(src="../../assets/demo.jpg")
     p.note 使用生成BFC的方法清除浮动
     .wrapper-bfc
-      img(src="../../assets/timg.jpg")
+      img(src="../../assets/demo.jpg")
     p.note 使用clear属性清除浮动
     .wrapper-clear
-      img(src="../../assets/timg.jpg")
+      img(src="../../assets/demo.jpg")
       .clear
 </template>
 
