@@ -31,9 +31,67 @@
     .wrapper-bfc
       img(src="../../assets/demo.jpg")
     p.note 使用clear属性清除浮动
-    .wrapper-clear
-      img(src="../../assets/demo.jpg")
+    .wrapper-clear.clear-fake
+      img.clear-fake(src="../../assets/demo.jpg")
       .clear
+    p.note 最简单的两栏布局
+    .bfc.mb-20
+      div.left-right-one
+        div.left
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+        div.right
+          p 这是右边的div
+          p 这是右边的div
+          p 这是右边的div
+    p.note float + margin
+    .bfc.mb-20
+      div.left-right-two
+        div.left
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+          p 这是左边的div
+        div.right
+          p 这是右边的div
+          p 这是右边的div
+          p 这是右边的div
+          p 这是右边的div
+          p 这是右边的div
+    p.note float + BFC
+    div.left-right-bfc.mb-20
+      div.left
+        p 这是左边的div
+        p 这是左边的div
+        p 这是左边的div
+      div.right
+        p 这是右边的div
+        p 这是右边的div
+        p 这是右边的div
+        p 这是右边的div
+        p 这是右边的div
+    p.note 最简单的三栏布局
+    div.left-middle-right.mb-20
+      div.left
+        p 这是左边的div
+        p 这是左边的div
+        p 这是左边的div
+      div.middle
+        p 这是中间的div
+        p 这是中间的div
+        p 这是中间的div
+      div.right
+        p 这是右边的div
+        p 这是右边的div
+        p 这是右边的div
 </template>
 
 <script>
@@ -65,5 +123,36 @@ export default {
       width: 200px
     .clear
       clear: both
-    .de
+    .clear-fake
+      &:after
+        content: ''
+        display: block
+        height: 0
+        overflow: hidden
+        clear: both
+  .left
+    background-color: lightblue
+  .right
+    background-color: palevioletred
+  .middle
+    background-color: lightyellow
+  .left-right-one
+    .left
+      float: left
+  .left-right-two
+    .left
+      float: left
+    .right
+      margin-left: 120px
+  .left-right-bfc
+    .left
+      float: left
+    .right
+      overflow: hidden
+  .left-middle-right
+    .left
+      float: left
+    .middle
+      float: left
+  .de
 </style>
