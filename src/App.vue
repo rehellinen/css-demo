@@ -1,35 +1,45 @@
 <template lang="pug">
-  div
-    switch-tab(:tabs="tabs")
-      div(slot="0")
-        float
-      div(slot="1")
-        layout
+  switch-tab(:tabs="tabs")
+    div(slot="0")
+      float
+    div(slot="1")
+      layout
+    div(slot="2")
+      b-f-c
+    div(slot="3")
+      absolute
 </template>
 
 <script>
 import SwitchTab from './base/switch-tab/switch-tab'
 import Float from './components/float/float'
 import Layout from './components/layout/layout'
+import BFC from './components/bfc/bfc'
+import Absolute from './components/absolute/absolute'
 
 
 export default {
   components: {
     SwitchTab,
     Float,
-    Layout
+    Layout,
+    BFC,
+    Absolute
   },
   data () {
     return {
-      tabs: ['布局', 'float']
+      tabs: ['float', 'layout', 'bfc', 'absolute']
     }
   }
 }
 </script>
 
 <style lang="sass" rel="stylesheet/sass">
+  .bfc
+    overflow: hidden
+  .mb-20
+    margin-bottom: 20px
   .note
-    margin-bottom: 10px
-    margin-left: 15px
-    color: #6c6c6c
+    margin: 10px 10px
+    color: #2c2c2c
 </style>
